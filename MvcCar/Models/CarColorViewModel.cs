@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MvcCar.Models
 {
-    public class CarsColorViewModel
+    public class CarColorViewModel
     {
         public List<Car> Cars { get; set; }
         public SelectList Colors { get; set; }

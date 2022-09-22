@@ -26,17 +26,25 @@ namespace MvcCar.Controllers
                                             orderby m.Color
                                             select m.Color;
 
-            var movies = from m in _context.Car
+            var Cars = from m in _context.Car
                          select m;
 
             if (!String.IsNullOrEmpty(searchString))
             {
-                movies = movies.Where(s => s.Name.Contains(searchString));
+                Cars = Cars.Where(s => s.Name.Contains(searchString));
             }
-            var Cars = from m in _context.Car
-                         select m;
+            if (!string.IsNullOrEmpty(carColor))
+            {
+                Cars = Cars.Where(x => x.Color == carColor);
+            }
 
-            return View(await movies.ToListAsync());
+            var carColorVM = new CarColorViewModel
+            {
+                Colors = new SelectList(await genreQuery.Distinct().ToListAsync()),
+                Cars = await Cars.ToListAsync()
+            };
+
+            return View(carColorVM);
         }
 
         // GET: Cars/Details/5
