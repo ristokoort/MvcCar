@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MvcCar.Data;
 
 namespace MvcCar.Migrations
 {
     [DbContext(typeof(MvcCarContext))]
-    partial class MvcCarContextModelSnapshot : ModelSnapshot
+    [Migration("20220922185545_Condtion")]
+    partial class Condtion
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

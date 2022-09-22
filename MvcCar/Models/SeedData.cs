@@ -27,25 +27,27 @@ namespace MvcCar.Models
                       Name = "Smallcar",
                       Color = "Yellow",
                       Speed = 100,
-                      
+                      Condition ="a+"
+
+
                   },
                    new Car
                    {
                        Name = "Bigcar",
                        Color = "Green",
                        Speed = 110,
-
+                       Condition = "b-"
                    },
                     new Car
                     {
                         Name = "Truck",
                         Color = "Yellow",
                         Speed = 90,
-
+                        Condition = "c-"
                     }
-                    
 
-                );
+
+                ) ;
                 context.SaveChanges();
                 if (context.Car.Any())
                 {

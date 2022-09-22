@@ -13,5 +13,7 @@ namespace MvcCar.Models
         public string Name { get; set; }
         public string Color { get; set; }
         public int Speed { get; set; }
+
+        public string Condition { get; set; }
     }
 }
