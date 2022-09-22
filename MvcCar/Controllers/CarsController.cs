@@ -20,9 +20,19 @@ namespace MvcCar.Controllers
         }
 
         // GET: Cars
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString)
         {
-            return View(await _context.Car.ToListAsync());
+            var movies = from m in _context.Car
+                         select m;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                movies = movies.Where(s => s.Name.Contains(searchString));
+            }
+            var Cars = from m in _context.Car
+                         select m;
+
+            return View(await movies.ToListAsync());
         }
 
         // GET: Cars/Details/5
