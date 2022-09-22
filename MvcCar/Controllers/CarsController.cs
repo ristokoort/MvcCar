@@ -20,8 +20,12 @@ namespace MvcCar.Controllers
         }
 
         // GET: Cars
-        public async Task<IActionResult> Index(string searchString)
+        public async Task<IActionResult> Index(string carColor, string searchString)
         {
+            IQueryable<string> genreQuery = from m in _context.Car
+                                            orderby m.Color
+                                            select m.Color;
+
             var movies = from m in _context.Car
                          select m;
 
