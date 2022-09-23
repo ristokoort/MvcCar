@@ -44,7 +44,14 @@ namespace MvcCar.Models
                         Color = "Yellow",
                         Speed = 90,
                         Condition = "c-"
-                    }
+                    },
+                      new Car
+                      {
+                          Name = "Clowncar",
+                          Color = "Red",
+                          Speed = 60,
+                          Condition = "a++"
+                      }
 
 
                 ) ;

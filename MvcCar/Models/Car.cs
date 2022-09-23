@@ -16,7 +16,7 @@ namespace MvcCar.Models
         public string Name { get; set; }
 
         [Required]
-        [StringLength(50)]
+        [StringLength(50, MinimumLength = 3)]
         public string Color { get; set; }
 
         [Range(1, 300)]
