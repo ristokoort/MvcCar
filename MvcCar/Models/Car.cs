@@ -23,7 +23,7 @@ namespace MvcCar.Models
         [Required]
         public int Speed { get; set; }
 
-        [StringLength(3)]
+        [StringLength(50)]
         [Required]
         public string Condition { get; set; }
     }

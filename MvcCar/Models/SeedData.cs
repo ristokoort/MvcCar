@@ -27,7 +27,7 @@ namespace MvcCar.Models
                       Name = "Smallcar",
                       Color = "Yellow",
                       Speed = 100,
-                      Condition ="a+"
+                      Condition ="Brand New"
 
 
                   },
@@ -36,21 +36,21 @@ namespace MvcCar.Models
                        Name = "Bigcar",
                        Color = "Green",
                        Speed = 110,
-                       Condition = "b-"
+                       Condition = "Used/refurbished"
                    },
                     new Car
                     {
                         Name = "Truck",
                         Color = "Yellow",
                         Speed = 90,
-                        Condition = "c-"
+                        Condition = "used"
                     },
                       new Car
                       {
                           Name = "Clowncar",
                           Color = "Red",
                           Speed = 60,
-                          Condition = "a++"
+                          Condition = " Brand New"
                       }
 
 
