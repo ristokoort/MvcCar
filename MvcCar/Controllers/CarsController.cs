@@ -18,11 +18,15 @@ namespace MvcCar.Controllers
         {
             _context = context;
         }
-
+         [HttpPost]
+        public string Index(string searchString, bool notUsed)
+        {
+            return "From [HttpPost]Index: filter on " + searchString;
+        }
         // GET: Cars
         public async Task<IActionResult> Index(string carColor, string searchString)
         {
-            IQueryable<string> genreQuery = from m in _context.Car
+            IQueryable<string> colorQuery = from m in _context.Car
                                             orderby m.Color
                                             select m.Color;
 
@@ -40,7 +44,7 @@ namespace MvcCar.Controllers
 
             var carColorVM = new CarColorViewModel
             {
-                Colors = new SelectList(await genreQuery.Distinct().ToListAsync()),
+                Colors = new SelectList(await colorQuery.Distinct().ToListAsync()),
                 Cars = await Cars.ToListAsync()
             };
 
