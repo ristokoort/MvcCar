@@ -45,7 +45,8 @@ namespace MvcCar.Controllers
             var carColorVM = new CarColorViewModel
             {
                 Colors = new SelectList(await colorQuery.Distinct().ToListAsync()),
-                Cars = await Cars.ToListAsync()
+                Cars = await Cars.ToListAsync(),
+                SearchString = searchString,
             };
 
             return View(carColorVM);
